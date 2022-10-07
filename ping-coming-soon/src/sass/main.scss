@@ -1,0 +1,152 @@
+@use './root';
+@use './typography';
+@use './utilities';
+@use './layout'as *;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    font-family: 'Libre Franklin',
+        sans-serif;
+}
+
+input,
+button {
+    font-family: 'Libre Franklin',
+        sans-serif;
+}
+
+body {
+    font-size: 1.25rem;
+    color: #{hsl(var(--clr-very-dark-blue))};
+}
+
+img,
+picture {
+    max-width: 100%;
+}
+
+input {
+    width: 100%;
+}
+
+.wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    padding: 3rem 0;
+
+    &__logo {
+        margin: 2rem 0;
+    }
+}
+
+.main {
+    margin-bottom: 7rem;
+}
+
+.form {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+
+    &-control>input {
+        padding: .75rem 2rem;
+        border-radius: 20px;
+        outline: none;
+        border: 0.5px solid #{hsl(var(--clr-pale-blue))};
+
+    }
+
+    &>*+* {
+        margin-top: 2rem;
+    }
+}
+
+
+.btn {
+    width: 100%;
+    border-radius: 20px;
+    outline: none;
+    padding: 0.75rem;
+    border: none;
+    background-color: #{hsl(var(--clr-blue))};
+    color: #{hsl(var(--clr-white))};
+    font-weight: 600;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 10px 15px -3px #{hsl(var(--clr-pale-blue))},
+        0 4px 6px -4px #{hsl(var(--clr-pale-blue))};
+    }
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon {
+    color: #{hsl(var(--clr-blue))};
+    border-radius: 50%;
+    border: .5px solid #{hsl(var(--clr-blue) / 0.2)};
+    font-size: 2.5rem;
+    padding: .5rem;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(2px);
+        border: .5px solid #{hsl(var(--clr-blue))};
+    }
+}
+
+.footer__copyright {
+    font-size: .75rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+input[aria-disabled=true] {
+    border: 1px solid #{hsl(var(--clr-light-red))};
+}
+
+
+@include mq {
+    .wrapper {
+        max-width: 760px;
+    }
+
+    .form {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &-control {
+            width: 70%;
+
+            >p {
+                text-align: left;
+            }
+        }
+
+        >button {
+            width: 30%;
+            align-self: flex-start;
+            margin-top: 0;
+        }
+    }
+
+
+}

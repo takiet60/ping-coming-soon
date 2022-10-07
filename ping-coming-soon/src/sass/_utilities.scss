@@ -1,0 +1,47 @@
+.bold-300 {
+    font-weight: 300;
+}
+
+.bold-600 {
+    font-weight: 600;
+}
+
+.bold-700 {
+    font-weight: 700;
+}
+
+.fs-xxl {
+    font-size: 2rem;
+}
+
+.fs-sm {
+    font-size: .75rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.gray {
+    color: #{hsl(var(--clr-gray))};
+}
+
+.red {
+    color: #{hsl(var(--clr-light-red))};
+}
+
+.mt-1 {
+    margin-top: 0.5rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
